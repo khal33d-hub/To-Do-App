@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+
+  <form class="" method="POST" action="/">
+    {{ form.title }}
+    {% csrf_token %}
+
+    <input type="submit" name="Create">
+
+  </form>
+
+  <h1>Here are your Tasks</h1>
+
+  {% if tasks %}
+     {% for task in tasks %}
+
+        <div class="">
+            <a href="{% url 'Edit' task.id %}"> Edit </a>
+            <a href="{% url 'delete' task.id %}"> Delete </a>
+          {% if tasks.complete == True %}
+
+        <p>  <del> {{task}} </del> </p>
+
+
+          {% else %}
+
+          <p> {{task}} </p>
+
+          {% endif %}
+
+        </div>
+
+
+     {% endfor %}
+    {% endif %}
+{% endblock %}

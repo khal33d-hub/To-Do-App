@@ -34,7 +34,7 @@ def update_task(request, pk):
 
     return render(request, "tasks/task_update.html",context)
 
-def delete_task(request,pk):
+def delete_task(request, pk):
     item = Task.objects.get(id=pk)
 
     if request.method == "POST":

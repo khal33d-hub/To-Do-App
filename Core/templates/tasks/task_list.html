@@ -19,7 +19,7 @@
             <a href="{% url 'delete' task.id %}"> Delete </a>
           {% if tasks.complete == True %}
 
-        <p>  <del> {{task}} </del> </p>
+        <p> <span> <del>{{task}}></del> </span> </p>
 
 
           {% else %}
@@ -32,5 +32,8 @@
 
 
      {% endfor %}
+
+     {% else %}
+     <p>You have no Tasks set yet</p>
     {% endif %}
 {% endblock %}

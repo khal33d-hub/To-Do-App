@@ -1,31 +1,37 @@
 {% extends "base.html" %}
 {% block content %}
+  <div class="">
 
-  <form class="" method="POST" action="/">
+
+
+  <form class="form-group" method="POST" action="/">
     {{ form.title }}
     {% csrf_token %}
 
-    <input type="submit" name="Create">
+    <input class="btn btn-success" type="submit" name="Create">
 
   </form>
 
   <h1>Here are your Tasks</h1>
-
+ </div>
   {% if tasks %}
      {% for task in tasks %}
 
         <div class="">
-            <a href="{% url 'Edit' task.id %}"> Edit </a>
-            <a href="{% url 'delete' task.id %}"> Delete </a>
+            <a class="btn btn-info" href="{% url 'Edit' pk=task.pk %}"> Edit </a>
+            <a class="btn btn-dark" href="{% url 'delete' pk=task.pk %}"> Delete </a>
           {% if tasks.complete == True %}
 
         <p> <span> <del>{{task}}></del> </span> </p>
 
 
           {% else %}
+          <div class=" shadow p-3 mb-5 bg-white rounded border border-dark">
+
 
           <p> {{task}} </p>
 
+            </div>
           {% endif %}
 
         </div>

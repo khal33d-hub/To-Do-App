@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 
-  <form class="" method="POST" action="/">
+  <form class="jumbotron container" method="POST" action="/">
     {{ form }}
     {% csrf_token %}
 
+
+    
     <input type="submit" name="update">
 
   </form>

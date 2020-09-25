@@ -4,7 +4,7 @@ A simple To Do App
 # INFO
 change branch from master to {}.format(yourname) branch, so we can work independly
 CSS FILES ARE IN CORE/STATIC/CSS
-HTML ARE IN TEMPLATES
+HTML ARE IN CORE/TEMPLATES/
 fork the branch repo
 
 # Firstly

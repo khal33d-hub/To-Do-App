@@ -3,9 +3,11 @@ A simple To Do App
 
 # INFO
 change branch from master to {}.format(yourname) branch, so we can work independly
+CSS FILES ARE IN CORE/STATIC/CSS
+HTML ARE IN TEMPLATES
 fork the branch repo
 
-# Firstly 
+# Firstly
 please confirm you have conda installed-- Run "conda" in your cmd/bash it should bring a context menu
 if it doesnt, google search download conda and download MINICONDA
 

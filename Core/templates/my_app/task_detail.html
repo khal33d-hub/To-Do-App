@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="jumbotron">
+    <h2>Task Details:</h2>
+    <p>Id_num: {{task_details.id}}</p>
+    <p>Name: {{task_details.title | title}}</p>
+    <p>Complete: {{task_details.complete}}</p>
+    <p>Time: {{task_details.created_date}}</p>
+
+  </div>
+  <div class="container">
+    <p><a class='btn btn-outline-warning' href="{% url 'my_app:update' pk=task_details.pk %}">Update</a></p>
+
+  </div>
+
+
+{% endblock %}

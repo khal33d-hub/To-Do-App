@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+  <!-- <div class="">
+
+
+
+  <form class="form-group" method="POST" action="/">
+    {{ form.title }}
+    {% csrf_token %}
+
+    <input class="btn btn-success" type="submit" name="Create">
+
+  </form>
+   </div>
+    -->
+<div class="">
+  <a class="btn btn-outline-secondary btn-lg btn-block" href="{% url 'my_app:create' %}"> Create </a>
+
+
+</div>
+  <br>
+  <br>
+{% if task_list %}
+  <h1>Here are your Tasks</h1>
+     {% for task in task_list %}
+
+        <div class="">
+            <a class="btn btn-outline-info" href="{% url 'my_app:update' pk=task.pk %}"> Edit </a>
+            <a class="btn btn-outline-dark" href="{% url 'my_app:delete' pk=task.pk %}"> Delete </a>
+
+            <div class=" shadow p-3 mb-5 bg-white rounded border border-dark">
+          {% if task.complete == True %}
+
+          <h2><a href="{{task.id}}/"> <span class="text-muted">{{task | title }} <h3> <span class="badge badge-secondary">Done</span></h3> </span> </a></h2>
+
+
+          {% else %}
+
+
+          <h2><a href="{{task.id}}/">{{task | title}} </a></h2>
+
+
+          {% endif %}
+            </div>
+          </div>
+
+
+
+
+     {% endfor %}
+
+{% else %}
+     <p>You have no Tasks set yet</p>
+{% endif %}
+{% endblock %}
